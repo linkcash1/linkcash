@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:code",
+      "destination": "/step1.html?target=https://linkcash.vercel.app/:code"
+    }
+  ]
+}
