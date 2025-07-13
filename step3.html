@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Earn a bonus</title></head><body>
+  <h1>Watch this ad to unlock your link</h1>
+  <!-- VIDEO OR CPA AD: paste ad code here -->
+  <button onclick="go()">Get My Link</button>
+  <script>
+    function go() {
+      const t = new URL(location).searchParams.get('target');
+      location = '/step4.html?target=' + encodeURIComponent(t);
+    }
+  </script>
+</body></html>
