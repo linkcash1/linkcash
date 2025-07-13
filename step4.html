@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
   <title>Almost there...</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; padding-top: 50px; }
+    #timer { font-size: 2em; margin-top: 20px; }
+  </style>
   <script>
-    // After 5s, redirect to final target URL
-    setTimeout(() => {
-      location = decodeURIComponent(new URL(location).searchParams.get('target'));
-    }, 5000);
+    let t = 5;
+    function tick() {
+      document.getElementById('timer').innerText = t;
+      if (t-- === 0) {
+        const target = new URL(location).searchParams.get('target');
+        location = decodeURIComponent(target);
+      }
+    }
+    setInterval(tick, 1000);
   </script>
-  <!-- FINAL BANNER/POPUNDER RETRY: paste ad code here -->
+  <!-- FINAL ADS (BANNER/POPUNDER) go here -->
 </head><body>
-  <h1>Your link is ready in a few seconds...</h1>
+  <h1>Your link is ready in…</h1>
+  <div id="timer">5</div>
 </body></html>
