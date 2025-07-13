@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
   <title>Generating your link...</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; padding-top: 50px; }
+    #timer { font-size: 2em; margin-top: 20px; }
+  </style>
   <script>
-    setTimeout(() => {
-      const t = new URL(location).searchParams.get('target');
-      location = '/step2.html?target=' + encodeURIComponent(t);
-    }, 6000);
+    let t = 6;
+    function tick() {
+      document.getElementById('timer').innerText = t;
+      if (t-- === 0) {
+        const target = new URL(location).searchParams.get('target');
+        location = '/step2.html?target=' + encodeURIComponent(target);
+      }
+    }
+    setInterval(tick, 1000);
   </script>
   <!-- POPUNDER & BANNER ADS: paste your ad code below -->
 </head><body>
   <h1>Please wait while we prepare your link...</h1>
+  <div id="timer">6</div>
 </body></html>
